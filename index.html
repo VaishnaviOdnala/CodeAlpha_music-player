@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Music Player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="player">
+        <header class="header">
+            <div class="music-icon">♫</div>
+            <div>
+                <h1>Music Player</h1>
+                <p>Your personal music space</p>
+            </div>
+        </header>
+
+        <section class="cover-section">
+            <div class="cover" id="cover">
+                <span id="coverIcon">♫</span>
+            </div>
+            <p class="now-playing">NOW PLAYING</p>
+            <h2 id="songTitle">Loading song...</h2>
+            <p id="artist">Please wait</p>
+        </section>
+
+        <audio id="audio"></audio>
+
+        <section class="progress-section">
+            <input
+                type="range"
+                id="progress"
+                min="0"
+                max="100"
+                value="0"
+                aria-label="Song progress"
+            >
+            <div class="time">
+                <span id="currentTime">0:00</span>
+                <span id="duration">0:00</span>
+            </div>
+        </section>
+
+        <section class="controls">
+            <button id="prevBtn" class="control-btn"
+                    aria-label="Previous song">⏮</button>
+            <button id="playBtn" class="play-btn"
+                    aria-label="Play">▶</button>
+            <button id="nextBtn" class="control-btn"
+                    aria-label="Next song">⏭</button>
+        </section>
+
+        <section class="volume-section">
+            <span>🔈</span>
+            <input
+                type="range"
+                id="volume"
+                min="0"
+                max="1"
+                step="0.01"
+                value="0.7"
+                aria-label="Volume"
+            >
+            <span>🔊</span>
+        </section>
+
+        <section class="playlist-section">
+            <div class="playlist-heading">
+                <h3>My Playlist</h3>
+                <span id="songCount">3 songs</span>
+            </div>
+            <div id="playlist" class="playlist"></div>
+        </section>
+
+        <p id="status" class="status" aria-live="polite">
+            Select a song to start listening
+        </p>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
